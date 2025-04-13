@@ -1,0 +1,56 @@
+<LinearLayout
+    ...
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <!-- Title or App Name -->
+<TextView
+android:id="@+id/tvTitle"
+    ...
+    android:text="Manga Mood Calculator"
+    android:textSize="24sp"
+    android:gravity="center" />
+
+    <!-- Subtitle / Instruction Link ("Need help? Tap here!") -->
+<TextView
+android:id="@+id/tvNeedHelp"
+    ...
+    android:text="Need help? Tap here!"
+    android:textColor="@color/purple_700"
+    android:clickable="true"
+    android:focusable="true" />
+
+    <!-- Grid of Buttons (Use a GridLayout or Flow of Material Chips) -->
+<GridLayout
+android:id="@+id/gridMoods"
+android:rowCount="3"
+android:columnCount="3"
+    ... >
+
+    <!-- Mood Buttons (as many as you like) -->
+<Button
+android:id="@+id/btnHappy"
+android:text="Happy"
+    ... />
+
+<Button
+android:id="@+id/btnAngry"
+android:text="Angry"
+    ... />
+    <!-- etc. -->
+    </GridLayout>
+
+    <!-- The "What Manga Do I Read?" Button -->
+<Button
+android:id="@+id/btnCalculate"
+android:text="What Manga Do I Read?"
+    ... />
+
+    <!-- Result TextView -->
+<TextView
+android:id="@+id/tvResult"
+    ...
+    android:textSize="18sp"
+    android:gravity="center"
+    android:text="Your Manga Will Appear Here" />
+    </LinearLayout>
