@@ -1,41 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/mainLayout"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/frameContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#cb4007"
-    android:padding="16dp">
+    android:background="@drawable/bg_gradient">
 
-    <TextView
-        android:id="@+id/questionText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Up for some reading? What are you feeling right now?"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp" />
+    <!-- Layer 1: Content container (to be blurred) -->
+    <RelativeLayout
+        android:id="@+id/blurContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
-    <Button
-        android:id="@+id/chooseMoodBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pick Your Mood"
-        android:layout_below="@id/questionText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp" />
+        <TextView
+            android:id="@+id/questionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Up for some reading? What are you feeling right now?"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp" />
 
-    <TextView
-        android:id="@+id/recommendationText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:layout_below="@id/chooseMoodBtn"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp" />
+        <Button
+            android:id="@+id/chooseMoodBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick Your Mood"
+            android:layout_below="@id/questionText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp" />
 
-    <!-- Add instruction pop-up here later -->
+        <TextView
+            android:id="@+id/recommendationText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_below="@id/chooseMoodBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp" />
 
-</RelativeLayout>
+        <!-- Optional dim overlay within the blurred container (if needed) -->
+        <View
+            android:id="@+id/dimOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <!-- Layer 2: Popup container (not blurred) -->
+    <FrameLayout
+        android:id="@+id/popupContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/instructionPopup"
+            layout="@layout/instructionpopup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <Button
+            android:id="@+id/showPopupButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:drawable/ic_menu_info_details"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</FrameLayout>
