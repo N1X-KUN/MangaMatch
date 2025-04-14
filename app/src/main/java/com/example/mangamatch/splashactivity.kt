@@ -14,7 +14,7 @@ class SplashActivity : AppCompatActivity() {
 
         // Delay 3 seconds, then go to MainActivity
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, MangaMatchIntroActivity::class.java))
             finish()
         }, 3000)
     }
