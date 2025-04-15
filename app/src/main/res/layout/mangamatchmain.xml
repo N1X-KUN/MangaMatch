@@ -15,13 +15,13 @@
 
         <TextView
             android:id="@+id/questionText"
-            android:layout_width="wrap_content"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
-            android:text="Up for some reading? What are you feeling right now?"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp" />
+            android:layout_marginTop="40dp"
+            android:text="Up for some reading? What are you feeling right now?"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/chooseMoodBtn"
@@ -43,7 +43,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp" />
 
-        <!-- Optional dim overlay within the blurred container (if needed) -->
+        <!-- Optional dim overlay inside the content layer -->
         <View
             android:id="@+id/dimOverlay"
             android:layout_width="match_parent"
@@ -58,22 +58,38 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include
-            android:id="@+id/instructionPopup"
-            layout="@layout/instructionpopup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+        <!-- Instruction Popup (centered) -->
+        <FrameLayout
+            android:id="@+id/instructionPopupWrapper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="visible">
 
+            <include
+                layout="@layout/instructionpopup" />
+        </FrameLayout>
+
+        <!-- Mood Popup (centered) -->
+        <FrameLayout
+            android:id="@+id/moodPopupWrapper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <include
+                layout="@layout/moodpopup" />
+        </FrameLayout>
+
+        <!-- Minimize Icon -->
         <Button
             android:id="@+id/showPopupButton"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@android:drawable/ic_menu_info_details"
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
+            android:background="@android:drawable/ic_menu_info_details"
             android:visibility="gone" />
-
     </FrameLayout>
-
 </FrameLayout>

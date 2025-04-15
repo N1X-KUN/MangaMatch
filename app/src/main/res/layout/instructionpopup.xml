@@ -3,6 +3,7 @@
     android:id="@+id/instructionPopup"
     android:layout_width="300dp"
     android:layout_height="wrap_content"
+    android:layout_gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
     android:background="@android:color/white"

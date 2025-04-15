@@ -8,7 +8,7 @@
         android:id="@+id/welcomeText"
         android:text="Welcome to Manga Mood Match!"
         android:textColor="#FFFFFF"
-        android:textSize="26sp"
+        android:textSize="20sp"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
