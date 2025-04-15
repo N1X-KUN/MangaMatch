@@ -23,7 +23,7 @@
         android:id="@+id/instructionBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome! To get started, choose up to 3 emotions that match your current mood. Then we’ll suggest a manga that vibes with you."
+        android:text="Welcome! This is a Manga Recommender base on your mood... \nTo get started, choose up to 2 mood and we’ll suggest a manga that vibes with you."
         android:textSize="14sp"
         android:layout_marginBottom="12dp"/>
 
